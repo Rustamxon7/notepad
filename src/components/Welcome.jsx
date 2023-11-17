@@ -10,19 +10,19 @@ const Welcome = () => {
     <div className='welcome'>
       <div className='title'>
         <h1>Welcome to Notepad Web</h1>
-        <button className='pen'>
+        <button className='open'>
           <PiPenLight className='icon' />
           <h3>New Note</h3>
         </button>
       </div>
 
       <footer>
-        <div className='anons'>
+        <div className='footer'>
           <p>developed by</p>
           <h4>Natanael Oliviera Martins</h4>
         </div>
 
-        <div className='icons'>
+        <div className='social-icons'>
           <AiOutlineInstagram className='icons-social' />
           <AiFillGithub className='icons-social' />
           <AiFillLinkedin className='icons-social' />

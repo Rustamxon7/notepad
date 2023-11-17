@@ -4,7 +4,7 @@ const Search = () => {
   return (
     <div className='search'>
       <input className='search-input' type='text' placeholder='Search' />
-      <button className='search-btn'>
+      <button type='button' className='search-btn'>
         <BiSearch />
       </button>
     </div>

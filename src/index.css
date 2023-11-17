@@ -12,13 +12,13 @@ html {
   width: 100%;
   height: 100vh;
 
-  background: linear-gradient(to bottom, #45484d 0%, #000000 100%);
+  background-color: rgb(27, 27, 27);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-family: 'Poppins';
+  font-family: "Poppins";
 
   position: fixed;
 }
@@ -34,7 +34,7 @@ html {
   gap: 0.6rem;
 }
 
-.pen {
+.open {
   background-color: rgb(52, 113, 255);
   color: #fff;
 
@@ -64,7 +64,7 @@ footer {
   padding: 1rem;
 }
 
-.anons {
+.footer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@ footer {
   color: rgb(220, 219, 224);
 }
 
-.icons {
+.social-icons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +137,7 @@ footer {
   font-size: 1.8rem;
   color: #fff;
   font-weight: 400;
-
+  cursor: pointer;
   padding: 0.8rem 1.2rem;
 
   border: none;
@@ -152,14 +152,13 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1.4rem;
 }
 
 .filter-title {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-
   font-size: 1.6rem;
 }
 
@@ -180,16 +179,17 @@ footer {
 
 .include {
   color: blue;
-
   border: solid 2px;
   border-color: blue;
+  cursor: pointer;
 }
 
 .include-color {
-  background-color: blue;
-  color: rgb(14, 13, 13);
+  background-color: rgb(57, 57, 146);
+  color: rgb(72, 39, 151);
   border-radius: 1rem;
-  border: none;
+  border: blue solid 2px;
+  cursor: pointer;
 }
 
 .notes {
@@ -206,8 +206,7 @@ footer {
 
   padding: 1rem;
   display: flex;
-  flex-direction: row;
-
+  flex-direction: column;
   border-radius: 0.4rem;
 }
 
@@ -216,6 +215,7 @@ footer {
   flex-direction: column;
   gap: 0.8rem;
   padding-bottom: 2.8rem;
+  height: 14rem;
 }
 
 .note-text h1 {
@@ -239,9 +239,9 @@ footer {
 .more-info button {
   height: 2.8rem;
   width: 2.8rem;
-
+  cursor: pointer;
   padding: 0.2rem;
-
+  cursor: pointer;
   font-size: 2rem;
   color: blue;
   border-radius: 50%;
@@ -267,7 +267,7 @@ footer {
   background-color: rgb(31, 31, 31);
   border: none;
   padding: 0.6rem;
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
