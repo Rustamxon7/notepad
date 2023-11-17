@@ -23,8 +23,11 @@ const Filter = () => {
           <div className="note-text">
             <h1>Docker Images</h1>
             <p>
-              Lorem Ipsum é simplesmente uma simulação de texto da indústria
-              tipográfica e de impressos, e vem ...
+              Lorem Ipsum é simplesmente uma Lorem ipsum dolor sit amet
+              consectetur. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quas quo aliquid ab at voluptates? Quae, veritatis?
+              simulação de texto da indústria tipográfica e de impressos, e vem
+              ...
             </p>
           </div>
           <div className="more-info">
@@ -37,8 +40,11 @@ const Filter = () => {
           <div className="note-text">
             <h1>Docker Images</h1>
             <p>
-              Lorem Ipsum é simplesmente uma simulação de texto da indústria
-              tipográfica e de impressos, e vem ...
+              Lorem Ipsum é simplesmente uma Lorem ipsum dolor sit amet
+              consectetur. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quas quo aliquid ab at voluptates? Quae, veritatis?
+              simulação de texto da indústria tipográfica e de impressos, e vem
+              ...
             </p>
           </div>
           <div className="more-info">
