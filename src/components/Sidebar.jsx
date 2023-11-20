@@ -1,11 +1,12 @@
 import Filter from './Filter';
 import Search from './Search';
 
-const Sidebar = () => {
+const Sidebar = ({data, setData}) => {
   return (
     <div className='sidebar'>
-      <Search />
-      <Filter />
+      <Search setData={setData}
+      data={data} />
+      <Filter data={data} />
     </div>
   );
 };

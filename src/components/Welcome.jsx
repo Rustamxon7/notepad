@@ -5,12 +5,12 @@ import {
 } from 'react-icons/ai';
 import { PiPenLight } from 'react-icons/pi';
 
-const Welcome = () => {
+const Welcome = ({openDashboard}) => {
   return (
     <div className='welcome'>
       <div className='title'>
         <h1>Welcome to Notepad Web</h1>
-        <button className='open'>
+        <button className='open' onClick={openDashboard}>
           <PiPenLight className='icon' />
           <h3>New Note</h3>
         </button>
