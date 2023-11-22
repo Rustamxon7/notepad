@@ -1,24 +1,31 @@
 import { BiSearch } from "react-icons/bi";
 
+import { notes } from "../data/data";
+
 const Search = ({ setData, data }) => {
   const searchNote = (e) => {
     e.preventDefault();
-    const getTitle = e.target.value
+    const getTitle = e.target.value.toLowerCase();
     console.log(getTitle);
 
-    const newNotes = data.filter(function (note) {
-      return note.title.toLowerCase().includes(getTitle)
-    })
+    const newNotes = notes.filter(function (note) {
+      return note.title.toLowerCase().includes(getTitle);
+    });
     console.log(newNotes);
 
-    setData(newNotes)
+    setData(newNotes);
   };
 
   return (
     <div className="search">
-      <input className="search-input" type="text" placeholder="Search"  onChange={(e) => searchNote(e)}/>
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search"
+        onChange={(e) => searchNote(e)}
+      />
       <button type="button" className="search-btn">
-        <BiSearch className="searching" />
+        <BiSearch className="searching" onClick={() => searchNote} />
       </button>
     </div>
   );
