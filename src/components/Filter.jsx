@@ -3,6 +3,7 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { FaEraser } from "react-icons/fa6";
 import { MdMoreVert } from "react-icons/md";
 
+<<<<<<< HEAD
 
 function handleClick () {
     
@@ -10,6 +11,20 @@ function handleClick () {
  }
 
 const Filter = ({ data }) => {
+=======
+const Filter = ({ data, setActiveNote}) => {
+
+  const handleClick = (id) =>{
+    console.log(id);
+    const currentNote  = data.filter(function (note) {
+      return note.id == id
+    })
+    setActiveNote(currentNote[0])
+  }
+
+
+
+>>>>>>> 5127c28de5de1ad43a8c9e9ba073c0e4a852a1af
   console.log(data);
   return (
     <div className="filter">
@@ -28,8 +43,13 @@ const Filter = ({ data }) => {
 
       <div className="notes">
         {data.map((note) => (
+<<<<<<< HEAD
           <div className="note">
             <div className="note-text" onClick={handleClick}>
+=======
+          <div className="note" onClick={() => handleClick(note.id)}>
+            <div className="note-text">
+>>>>>>> 5127c28de5de1ad43a8c9e9ba073c0e4a852a1af
               <h1>{note.title}</h1>
               <p>
                {note.info}
