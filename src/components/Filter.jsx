@@ -3,6 +3,12 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { FaEraser } from "react-icons/fa6";
 import { MdMoreVert } from "react-icons/md";
 
+
+function handleClick () {
+    
+  console.log(getTitle);
+ }
+
 const Filter = ({ data }) => {
   console.log(data);
   return (
@@ -18,11 +24,12 @@ const Filter = ({ data }) => {
         <button className="include-color">PostgreSQL</button>
         <button className="include">#CSS</button>
       </div>
+  
 
       <div className="notes">
         {data.map((note) => (
           <div className="note">
-            <div className="note-text">
+            <div className="note-text" onClick={handleClick}>
               <h1>{note.title}</h1>
               <p>
                {note.info}

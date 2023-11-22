@@ -57,6 +57,8 @@ function App() {
     setOpenPage(!openPage);
   };
 
+ 
+
   return (
     <>
      {!openPage && <Welcome openDashboard={openDashboard} />}

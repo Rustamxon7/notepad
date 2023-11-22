@@ -13,10 +13,11 @@ const Search = ({ setData, data }) => {
 
     setData(newNotes)
   };
+  
 
   return (
     <div className="search">
-      <input className="search-input" type="text" placeholder="Search"  onChange={(e) => searchNote(e)}/>
+      <input className="search-input" type="text" placeholder="Search" onChange={(e) => searchNote(e) }/>
       <button type="button" className="search-btn">
         <BiSearch className="searching" />
       </button>
