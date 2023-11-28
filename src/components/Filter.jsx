@@ -3,13 +3,13 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { FaEraser } from "react-icons/fa6";
 import { MdMoreVert } from "react-icons/md";
 
-const Filter = ({ data, setActiveNote }) => {
+const Filter = ({ data, onActiveNote }) => {
   const handleClick = (id) => {
     console.log(id);
     const currentNote = data.filter(function (note) {
       return note.id == id;
     });
-    setActiveNote(currentNote[0]);
+    onActiveNote(currentNote[0]);
   };
 
   console.log(data);
@@ -29,7 +29,11 @@ const Filter = ({ data, setActiveNote }) => {
 
       <div className="notes">
         {data.map((note) => (
-          <div className="note" onClick={() => handleClick(note.id)}>
+          <div
+            key={note.id}
+            className="note"
+            onClick={() => handleClick(note.id)}
+          >
             <div className="note-text">
               <h1>{note.title}</h1>
               <p>{note.info}</p>

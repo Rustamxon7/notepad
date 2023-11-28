@@ -1,14 +1,14 @@
 import Filter from './Filter';
 import Search from './Search';
 
-const Sidebar = ({data, setData, activeNote, setActiveNote}) => {
+const Sidebar = ({data,  activeNote, onActiveNote}) => {
   return (
     <div className='sidebar'>
-      <Search setData={setData}
-      data={data} />
+      {/* <Search setData={setData}
+      data={data} /> */}
       <Filter data={data}
        activeNote={activeNote}
-       setActiveNote={setActiveNote} />
+       onActiveNote={onActiveNote} />
     </div>
   );
 };
