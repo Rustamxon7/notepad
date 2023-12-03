@@ -121,7 +121,7 @@ footer {
 
 .search-input {
   width: 100%;
-
+outline: none;
   color: #fff;
   font-size: 1.4rem;
 

@@ -1,14 +1,22 @@
-import Filter from './Filter';
-import Search from './Search';
+import Filter from "./Filter";
+import Search from "./Search";
 
-const Sidebar = ({data,  activeNote, onActiveNote}) => {
+const Sidebar = ({
+  searchResult,
+  dispatch,
+  data,
+  activeNote,
+  onActiveNote,
+}) => {
   return (
-    <div className='sidebar'>
-      {/* <Search setData={setData}
-      data={data} /> */}
-      <Filter data={data}
-       activeNote={activeNote}
-       onActiveNote={onActiveNote} />
+    <div className="sidebar">
+      <Search dispatch={dispatch} data={data} />
+      <Filter
+        searchResult={searchResult}
+        data={data}
+        activeNote={activeNote}
+        onActiveNote={onActiveNote}
+      />
     </div>
   );
 };

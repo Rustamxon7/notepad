@@ -1,19 +1,14 @@
 import { BiSearch } from "react-icons/bi";
-
-import { notes } from "../data/data";
-
-const Search = ({ setData, data }) => {
+const Search = ({ dispatch, data }) => {
   const searchNote = (e) => {
     e.preventDefault();
     const getTitle = e.target.value.toLowerCase();
-    console.log(getTitle);
 
-    const newNotes = notes.filter(function (note) {
+    const newNotes = data.filter(function (note) {
       return note.title.toLowerCase().includes(getTitle);
     });
-    console.log(newNotes);
 
-    setData(newNotes);
+    dispatch({ type: "SEARCH", payload: newNotes });
   };
 
   return (

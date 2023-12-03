@@ -11,10 +11,14 @@ const initialState = {
   openPage: true,
   data: notes,
   activeNote: notes[0],
+  searchResult: [],
 };
 
 const OPEN_DASHBOARD = "OPEN_DASHBOARD";
 const CURRENT_NOTE = "CURRENT_NOTE";
+const SEARCH = "SEARCH";
+const ADD_NOTE = "ADD_NOTE";
+const EDIT_NOTE = "EDIT_NOTE";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -28,31 +32,35 @@ const reducer = (state, action) => {
         ...state,
         activeNote: action.payload,
       };
+    case ADD_NOTE:
+      return {
+        ...state,
+        // data: state.data.push(action.payload),
+        data: [action.payload, ...state.data],
+        activeNote: action.payload,
+      };
+    case EDIT_NOTE:
+      return {
+        ...state,
+        data: action.payload,
+      };
+    case SEARCH:
+      return {
+        ...state,
+        searchResult: action.payload,
+      };
     default:
       return state;
   }
 };
 
 function App() {
-  // const [openPage, setOpenPage] = useState(true);
-  // const [data, setData] = useState(notes);
-  // const [activeNote, setActiveNote] = useState({
-  //   id: 1,
-  //   title: "Lorem Ipsum",
-  //   info: "My name is Lorem",
-  //   hashtags: ["personal"],
-  //   category: "personal",
-  //   edited_at: 17 / 10 / 2021,
-  //   created_at: 18 / 11 / 2021,
-  // });
-
-  const [{ openPage, data, activeNote }, dispatch] = useReducer(
+  const [{ openPage, data, activeNote, searchResult }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
   const openDashboard = () => {
-    // setOpenPage(!openPage);
     dispatch({ type: OPEN_DASHBOARD });
   };
 
@@ -60,18 +68,26 @@ function App() {
     dispatch({ type: CURRENT_NOTE, payload: note });
   };
 
+  /*const date = new Date(timestamp * 1000);
+const datevalues = [
+   date.getFullYear(),
+   date.getMonth()+1,
+   date.getDate( */
+
   return (
     <>
       {!openPage && <Welcome openDashboard={openDashboard} />}
       {openPage && (
         <Dashboard>
           <Sidebar
+            searchResult={searchResult}
             data={data}
             activeNote={activeNote}
             onActiveNote={handleActiveNote}
+            dispatch={dispatch}
           />
-          <Main activeNote={activeNote} onActiveNote={handleActiveNote} />
-          <Categories />
+          <Main activeNote={activeNote} data={data} dispatch={dispatch} />
+          <Categories dispatch={dispatch} data={data} />
         </Dashboard>
       )}
     </>
