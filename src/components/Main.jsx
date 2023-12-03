@@ -1,16 +1,35 @@
+/* eslint-disable react/prop-types */
 import { AiFillFolder } from "react-icons/ai";
 import { TbClockHour5 } from "react-icons/tb";
-// import {data} from '../data/data'
 
-const Main = ({ activeNote }) => {
-  console.log(activeNote);
-  const hero = activeNote
+const Main = ({ activeNote, data, dispatch }) => {
+  const hero = activeNote;
+
+  const handleEditNoteTitle = (title) => {
+    const editedNotes = data.map((note) =>
+      note.id === activeNote.id ? { ...note, title: title } : note
+    );
+    dispatch({ type: "EDIT_NOTE", payload: editedNotes });
+  };
+
+  const handleEditNoteInfo = (info) => {
+    const editedNotes = data.map((note) =>
+      note.id === activeNote.id ? { ...note, info: info } : note
+    );
+    dispatch({ type: "EDIT_NOTE", payload: editedNotes });
+  };
 
   return (
     <div className="dashboard">
       <div className="main">
         <div className="main-title">
-          <h1>{hero.title}</h1>
+          <h1
+            contentEditable={true}
+            suppressContentEditableWarning={true}
+            onInput={(e) => handleEditNoteTitle(e.currentTarget.textContent)}
+          >
+            {hero.title}
+          </h1>
           <div className="folder">
             <p>
               <AiFillFolder className="time" /> Coding
@@ -26,7 +45,14 @@ const Main = ({ activeNote }) => {
           <div className="dashboard-hashtags">
             <p>{hero.hashtags}</p>
           </div>
-          <p className="lorem">{hero.info}</p>
+          <p
+            className="lorem"
+            contentEditable={true}
+            suppressContentEditableWarning={true}
+            onInput={(e) => handleEditNoteInfo(e.currentTarget.textContent)}
+          >
+            {hero.info}
+          </p>
         </div>
       </div>
     </div>
